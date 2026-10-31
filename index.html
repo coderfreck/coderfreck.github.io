@@ -110,6 +110,9 @@ p.body { max-width: 65ch; margin: 0 0 14px; }
 .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .contact a { overflow-wrap: anywhere; }
 
+.project .actions { margin-top: 16px; }
+.project .btn { padding: 8px 14px; font-size: 14px; }
+
 footer { border-top: 1px solid var(--line); padding: 32px 0 48px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
 
@@ -128,6 +131,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
     <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#certifications">Certifications</a>
       <a href="#awards">Awards</a>
@@ -203,6 +207,28 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         <div class="chips tools"><span class="chip">ServiceNow</span><span class="chip">Splunk</span><span class="chip">BMC Release Management</span></div>
       </article>
     </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects <span class="mono">// github</span></h2>
+    <article class="job project">
+      <div class="job-head">
+        <h3>Playwright + TypeScript Test Automation Framework</h3>
+        <span class="dates">Open source</span>
+      </div>
+      <p class="org">UI and API test automation · Sauce Demo + Restful Booker</p>
+      <ul>
+        <li>Built an end-to-end automation framework with Playwright and TypeScript covering an e-commerce web app and a REST API.</li>
+        <li>Page Object Model with custom fixtures, a setup project that logs in once and reuses the session, and data-driven validation tests.</li>
+        <li>API suite covering token auth, full CRUD, filtering and negative cases, with unique test data so tests run safely in parallel.</li>
+        <li>GitHub Actions pipeline runs a type check and all tests on every push, then publishes the HTML report to GitHub Pages.</li>
+      </ul>
+      <div class="chips tools"><span class="chip">Playwright</span><span class="chip">TypeScript</span><span class="chip">Page Object Model</span><span class="chip">API testing</span><span class="chip">GitHub Actions</span></div>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/coderfreck/playwright-typescript-framework">View code</a>
+        <a class="btn ghost" href="https://coderfreck.github.io/playwright-typescript-framework/">Latest test report</a>
+      </div>
+    </article>
   </section>
 
   <section id="skills">
