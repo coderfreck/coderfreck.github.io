@@ -1,0 +1,301 @@
+TEST<div>
+  x
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaibhav Asthana Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: a single readable column styled like a QA test report — summary first, then suites (experience, skills, certifications). */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --ink: #141b2b;
+  --muted: #5a6478;
+  --line: #dde2ea;
+  --accent: #2346c4;
+  --accent-soft: #e6ebfb;
+  --pass: #1f8a55;
+  --pass-soft: #e3f4ea;
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1320; --surface: #161d2e; --ink: #e8ecf4; --muted: #9aa4b8;
+    --line: #273149; --accent: #8aa4ff; --accent-soft: #1d2848;
+    --pass: #5fd394; --pass-soft: #15322a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1320; --surface: #161d2e; --ink: #e8ecf4; --muted: #9aa4b8;
+  --line: #273149; --accent: #8aa4ff; --accent-soft: #1d2848;
+  --pass: #5fd394; --pass-soft: #15322a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+}
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+header.top { border-bottom: 1px solid var(--line); background: var(--surface); }
+header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.mono { font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+nav a:hover { color: var(--accent); }
+
+.hero { padding: 56px 0 40px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+.eyebrow { color: var(--accent); font-family: var(--font-mono); font-size: 13px; margin: 0 0 10px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 6vw, 60px); line-height: 1.02; margin: 0 0 16px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 52ch; margin: 0 0 24px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--surface); }
+.btn.ghost { color: var(--accent); background: transparent; }
+
+.run { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.run-head { display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.run ul { list-style: none; margin: 0; padding: 8px 0; }
+.run li { display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; padding: 7px 16px; align-items: baseline; font-size: 15px; }
+.tick { color: var(--pass); font-family: var(--font-mono); }
+.run li span:last-child { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.run-foot { padding: 10px 16px; background: var(--pass-soft); color: var(--pass); font-family: var(--font-mono); font-size: 13px; }
+
+section { padding: 40px 0; border-top: 1px solid var(--line); }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 28px; margin: 0 0 24px; display: flex; align-items: baseline; gap: 12px; text-wrap: balance; }
+h2 .mono { color: var(--muted); font-weight: 400; }
+p.body { max-width: 65ch; margin: 0 0 14px; }
+
+.timeline { display: grid; gap: 16px; }
+.job { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 22px; }
+.job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.job h3 { font-family: var(--font-display); font-size: 21px; font-weight: 600; margin: 0; }
+.job .org { color: var(--muted); margin: 2px 0 12px; font-size: 15px; }
+.job .dates { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.job ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.status { display: inline-block; font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--pass-soft); color: var(--pass); margin-left: 8px; vertical-align: middle; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.skill-group { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+.skill-group h3 { font-size: 15px; margin: 0 0 12px; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; padding: 4px 10px; border-radius: 4px; background: var(--accent-soft); color: var(--ink); }
+
+.certs { display: grid; gap: 12px; }
+.cert { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; }
+.cert h3 { margin: 0; font-size: 17px; font-weight: 600; }
+.cert .issuer { color: var(--muted); font-size: 15px; }
+.cert .valid { font-family: var(--font-mono); font-size: 13px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.cert .cid { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+.card h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.chips.tools { margin-top: 14px; }
+.chips.tools .chip { font-family: var(--font-mono); font-size: 12px; background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.award { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--pass); border-radius: 8px; padding: 14px 18px; font-weight: 500; }
+.award .dates { font-family: var(--font-mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.contact a { overflow-wrap: anywhere; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 760px) {
+  .hero, .two { grid-template-columns: 1fr; }
+  .hero { padding-top: 36px; gap: 28px; }
+  nav { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="mono">vaibhav.asthana / qa</span>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Quality Assurance Engineer · Tata Consultancy Services</p>
+      <h1>Vaibhav Asthana</h1>
+      <p class="lede">Quality Assurance Engineer with 7+ years of IT experience in manual, functional and regression testing, test case design, defect management and release validation. Based in Prayagraj, India.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/vaibhav-asthana-638a74369/">LinkedIn profile</a>
+      </div>
+    </div>
+
+    <aside class="run" aria-label="Career summary">
+      <div class="run-head mono"><span>career.spec.ts</span><span>7 tests</span></div>
+      <ul>
+        <li><span class="tick">✓</span><span>Joined TCS</span><span>2019</span></li>
+        <li><span class="tick">✓</span><span>Release &amp; deployment, Citibank</span><span>4 yrs</span></li>
+        <li><span class="tick">✓</span><span>QA Engineer, DGCA</span><span>2023–now</span></li>
+        <li><span class="tick">✓</span><span>ISTQB Certified Tester (CTFL)</span><span>ok</span></li>
+        <li><span class="tick">✓</span><span>Google Cloud DevOps Engineer</span><span>2026</span></li>
+        <li><span class="tick">✓</span><span>MCA, Integral University</span><span>2026</span></li>
+        <li><span class="tick">✓</span><span>TCS awards</span><span>4</span></li>
+      </ul>
+      <div class="run-foot">7 passed · 0 failed</div>
+    </aside>
+  </div>
+
+  <section id="about">
+    <h2>About <span class="mono">// summary</span></h2>
+    <p class="body">I'm a Quality Assurance Engineer with 7+ years of IT experience, specializing in manual testing, functional testing, regression testing, test case design, defect management and release validation. I analyze requirements, execute comprehensive test scenarios and make sure software quality holds across development and release cycles.</p>
+    <p class="body">I work with Jira, ServiceNow, Playwright, TypeScript, Postman, SQL and production release processes. Four years on the release side at Citibank gave me a strong understanding of end-to-end software delivery, and I focus on reliable, high-quality releases.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience <span class="mono">// Tata Consultancy Services</span></h2>
+    <div class="timeline">
+      <article class="job">
+        <div class="job-head">
+          <h3>Quality Assurance Engineer <span class="status">current</span></h3>
+          <span class="dates">May 2023 – Present</span>
+        </div>
+        <p class="org">Public-service application for the Directorate General of Civil Aviation (DGCA) · Onsite</p>
+        <ul>
+          <li>Perform functional testing, test case design and execution, defect identification and tracking, regression testing, and validation against business and quality requirements.</li>
+          <li>Analyze requirements and develop comprehensive test scenarios to verify application functionality and quality.</li>
+          <li>Collaborate with development and other project teams to investigate defects, validate fixes and support stable releases.</li>
+          <li>Use Playwright and TypeScript for test automation, and Postman and MySQL for API and database validation.</li>
+        </ul>
+        <div class="chips tools"><span class="chip">Playwright</span><span class="chip">Jira</span><span class="chip">Postman</span><span class="chip">MySQL</span><span class="chip">Mastercraft ALM</span></div>
+      </article>
+      <article class="job">
+        <div class="job-head">
+          <h3>Release &amp; Deployment Engineer</h3>
+          <span class="dates">Apr 2019 – May 2023</span>
+        </div>
+        <p class="org">Banking-service project for Citibank · Onsite</p>
+        <ul>
+          <li>Managed end-to-end deployments across Development, UAT and Production environments for multiple enterprise applications.</li>
+          <li>Coordinated monthly major and minor production releases with minimal downtime.</li>
+          <li>Handled Change Requests through ServiceNow for controlled, compliant deployments.</li>
+          <li>Executed deployments with release management tools and validated post-deployment stability.</li>
+          <li>Monitored production systems, raised and resolved incidents, and worked with Development, QA and Infrastructure teams to troubleshoot deployment issues.</li>
+          <li>Maintained deployment documentation, checklists and rollback strategies for consistent release delivery.</li>
+        </ul>
+        <div class="chips tools"><span class="chip">ServiceNow</span><span class="chip">Splunk</span><span class="chip">BMC Release Management</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills <span class="mono">// toolkit</span></h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Testing &amp; QA</h3>
+        <div class="chips"><span class="chip">Manual</span><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Integration</span><span class="chip">System</span><span class="chip">UAT</span><span class="chip">Smoke</span><span class="chip">Sanity</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Test management</h3>
+        <div class="chips"><span class="chip">Test case design &amp; execution</span><span class="chip">Requirement analysis</span><span class="chip">Test planning</span><span class="chip">Defect tracking</span><span class="chip">Defect lifecycle</span><span class="chip">Jira</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Automation &amp; API</h3>
+        <div class="chips"><span class="chip">Playwright</span><span class="chip">TypeScript</span><span class="chip">API testing</span><span class="chip">Postman</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Database &amp; tools</h3>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">GitHub</span><span class="chip">ServiceNow</span><span class="chip">Splunk</span><span class="chip">Grafana</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Release &amp; deployment</h3>
+        <div class="chips"><span class="chip">Release management</span><span class="chip">Change management</span><span class="chip">Production validation</span><span class="chip">Deployment support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications <span class="mono">// 4</span></h2>
+    <div class="certs">
+      <div class="cert">
+        <div><h3>ISTQB Certified Tester – Foundation Level (CTFL)</h3><div class="issuer">ISTQB</div></div>
+        <div class="valid"></div>
+      </div>
+      <div class="cert">
+        <div><h3>Professional Cloud DevOps Engineer</h3><div class="issuer">Google Cloud</div></div>
+        <div class="valid">Jun 2026 – Jun 2028</div>
+        <div class="cid">Credential ID 0cd31b60a25a49f7aa58180a8b2a83ef</div>
+      </div>
+      <div class="cert">
+        <div><h3>Claude Certified Architect – Foundations</h3><div class="issuer">Anthropic</div></div>
+        <div class="valid">Aug 2026 – Aug 2027</div>
+        <div class="cid">Credential ID 4d4f25d4-91b4-46cb-a5cb-949f3d5faa29</div>
+      </div>
+      <div class="cert">
+        <div><h3>Claude Certified Associate – Foundations</h3><div class="issuer">Anthropic</div></div>
+        <div class="valid">Aug 2026 – Aug 2027</div>
+        <div class="cid">Credential ID e9089823-a654-4850-a415-667dbd01bdc4</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Awards <span class="mono">// Tata Consultancy Services</span></h2>
+    <div class="awards">
+      <div class="award"><span>On The Spot Award</span><span class="dates">Jan 2026</span></div>
+      <div class="award"><span>Services and Commitment Award</span><span class="dates">Jan 2024</span></div>
+      <div class="award"><span>Special Initiative Award</span><span class="dates">Sep 2023</span></div>
+      <div class="award"><span>Services and Commitment Award</span><span class="dates">Apr 2022</span></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Master of Computer Applications (MCA)</h3>
+        <p>Integral University, Lucknow · Jun 2024 – Jun 2026</p>
+      </div>
+      <div class="card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>United Institute of Management, Prayagraj · Jul 2015 – May 2018</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="card"><h3>Email</h3><p><a href="mailto:vaibhav3.asthana@gmail.com">vaibhav3.asthana@gmail.com</a></p></div>
+      <div class="card"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/vaibhav-asthana-638a74369/">vaibhav-asthana-638a74369</a></p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vaibhav Asthana · Quality Assurance Engineer · Prayagraj, India</span>
+    <a href="https://www.linkedin.com/in/vaibhav-asthana-638a74369/">linkedin.com/in/vaibhav-asthana-638a74369</a>
+  </div>
+</footer>
+</body>
+</html>
